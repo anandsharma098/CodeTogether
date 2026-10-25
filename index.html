@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CodeTogether | Collaborative Coding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><div class="brand"><span class="logo">&lt;/&gt;</span><div><strong>CodeTogether</strong><small>Collaborative Coding Platform</small></div></div><div class="status"><span class="dot"></span><span id="connectionText">Connecting…</span></div></header>
+  <main class="layout">
+    <section class="work-area">
+      <div class="roombar"><div><label for="userName">Your name</label><input id="userName" placeholder="e.g. Anand" maxlength="24"></div><div><label for="roomId">Room ID</label><input id="roomId" placeholder="e.g. CSE2026" maxlength="20"></div><button id="joinBtn" class="primary">Create / Join Room</button><span id="roomInfo">Not in a room</span></div>
+      <div class="editor-grid">
+        <section class="editor-card"><div class="card-head"><span>01&nbsp; HTML</span><span class="tag orange">Structure</span></div><textarea id="htmlCode" spellcheck="false" aria-label="HTML code"><h1>Hello, world!</h1>
+<p>Edit the code and click Run.</p></textarea></section>
+        <section class="editor-card"><div class="card-head"><span>02&nbsp; CSS</span><span class="tag blue">Style</span></div><textarea id="cssCode" spellcheck="false" aria-label="CSS code">body { font-family: Arial; padding: 20px; }
+h1 { color: #2563eb; }</textarea></section>
+        <section class="editor-card"><div class="card-head"><span>03&nbsp; JavaScript</span><span class="tag yellow">Logic</span></div><textarea id="jsCode" spellcheck="false" aria-label="JavaScript code">console.log('Hello from JavaScript!');</textarea></section>
+      </div>
+      <div class="actions"><button id="runBtn" class="primary">▶ Run Code</button><button id="clearBtn" class="secondary">Clear Editors</button><span class="hint">Tip: open this same URL in another browser tab and join the same room to test live collaboration.</span></div>
+      <section class="preview-card"><div class="card-head"><span>Live Preview</span><span class="tag green">Output</span></div><iframe id="preview" title="Code output" sandbox="allow-scripts"></iframe></section>
+      <section class="console-card"><div class="card-head"><span>Console Output</span><button id="clearConsole" class="text-btn">Clear</button></div><pre id="consoleOutput">Ready. Click Run Code to see output.</pre></section>
+    </section>
+    <aside class="sidebar"><section class="side-card"><div class="side-title"><h2>Room Chat</h2><span class="people"><span class="dot"></span><span id="roomCount">0</span> online</span></div><div id="chatMessages" class="chat-messages"><p class="empty">Join a room to start chatting.</p></div><form id="chatForm" class="chat-form"><input id="chatInput" placeholder="Write a message…" maxlength="500" disabled><button aria-label="Send message" id="sendBtn" disabled>➤</button></form></section><section class="side-card about"><h2>How to use</h2><ol><li>Enter your name.</li><li>Enter a room ID, or leave blank to create one.</li><li>Share the room ID with your teammate.</li><li>Edit HTML, CSS or JavaScript together.</li><li>Click <b>Run Code</b> to view output.</li></ol><p class="note">Keep this server window open while using the app.</p></section></aside>
+  </main>
+  <script src="/socket.io/socket.io.js"></script><script src="script.js"></script>
+</body></html>

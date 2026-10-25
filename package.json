@@ -1,0 +1,8 @@
+{
+  "name": "collaborative-coding-platform",
+  "version": "1.0.0",
+  "description": "Beginner-friendly collaborative HTML CSS JavaScript coding platform",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.21.2", "socket.io": "^4.8.1" }
+}
